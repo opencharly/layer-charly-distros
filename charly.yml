@@ -2655,6 +2655,7 @@ omarchy-cstream-skill:
             - "omarchy-cstream / the streamed Omarchy desktop / pod-cstream / layer-cstream-desktop / Hyprland-over-HTTPS"
         content: |
             # omarchy-cstream
+
             The Omarchy desktop, streamed to a browser — Hyprland with its Quickshell
             shell. The GUI edition of the Omarchy image family: the base image plus the
             cstream transport spine, a nested Hyprland, and Omarchy's own shell,
