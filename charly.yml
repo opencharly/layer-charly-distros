@@ -2421,9 +2421,6 @@ omarchy-skill:
             - `/charly-vm:omarchy-vm` — the ISO-installed VM
             - `/charly-image:image` — box family umbrella
 
-# NOTE (R3): the omarchy-eval / omarchy-eval-golden skill entities are NOT
-# owned here — they live in opencharly/eval-omarchy
-# (candy/eval-lane/charly.yml, generated to marketplace/distros/skills/).
 omarchy-cstream-skill:
     skill:
         name: omarchy-cstream
