@@ -1,26 +1,19 @@
 charly-distros:
     candy:
         description: |-
-            Metadata concept candy owning the charly-distros skills whose names have no namesake candy (base OS images + GPU runtime). Owns its family's `skill:` kind entities (sibling nodes in this file) — the
-            the plugins→candies migration; candy/plugin-marketplace regenerates the marketplace
-            corpus (the standalone opencharly/marketplace repo) from them.
+            Drained concept candy — kept only so this repo still validates as a project while
+            it awaits retirement (opencharly/opencharly#600). It owns NO `skill:` entity any
+            more: under AGENTS.md Part II #5 the 1 `distros` family skills moved,
+            byte-identically, to the repositories that hold the code, plugin or config each one
+            documents — `layer-nvidia`.
+            Nothing is authored here now.
         plan:
-            - run: this documentation-only candy ships no install content (it carries the family's skill/hook/marketplace entities); validate-satisfying no-op
+            - run: this documentation-only candy ships no install content (it carried the family's skill entities); validate-satisfying no-op
               command: "true"
               context:
                 - build
-            - check: the distros concept candy's skill entities are present and generated into the marketplace's distros/skills
-              id: charly-distros-present
+            - check: no-op — this drained candy declares no skill node; every distros-family skill lives in the repo that holds the entity it documents
+              id: charly-distros-drained
               context:
                 - build
               command: "true"
-
-nvidia-layer-skill:
-    skill:
-        name: nvidia-layer
-        family: distros
-        owner: charly-distros
-        description: |-
-            NVIDIA GPU runtime support: driver libs, nvidia-container-toolkit (CDI), and VA-API.
-            Fedora (negativo17) and Arch Linux (pac). Base candy for all GPU-accelerated boxes.
-            Use when working with NVIDIA GPU support, CDI device injection, or the nvidia candy.

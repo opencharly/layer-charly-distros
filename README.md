@@ -1,63 +1,34 @@
-# charly-distros
+# charly-distros — retired
 
-The `charly-distros` family — the distro base-image and GPU-runtime skills.
+> **RETIRED — this repo publishes nothing.** Its one `distros`-family skill lives in the
+> repo that holds the code, plugin or config it documents (the table below). Nothing is
+> authored, built, deployed or consumed here: a change to it is a change at its destination
+> repo, in the same pull request as the entity it documents.
 
-The `charly-distros` candy is a **concept candy**: it ships no install content
-and owns the `distros` family of `skill:` entities whose names have no namesake
-candy. It currently carries the `nvidia-layer` skill — NVIDIA GPU runtime
-support (driver libraries, `nvidia-container-toolkit` for CDI device injection,
-and VA-API hardware video acceleration). The rest of the `distros` family is
-owned by the standalone `distro-*` repos (`distro-arch`, `distro-cachyos`,
-`distro-debian`, `distro-fedora`, `distro-omarchy`, `distro-ubuntu`) and their
-sibling `layer-*` repos. `candy/plugin-marketplace` regenerates the standalone
-[opencharly/marketplace](https://github.com/opencharly/marketplace) corpus from
-these entities, so the skills are authored here and projected there.
+**This repo no longer authors a skill.** It was the `charly-distros` concept candy: a `true`-no-op `plan:` and one `skill:` entity, with the prose in `.agents/skills/`.
+Under `AGENTS.md` Part II #5 a skill lives in the repo whose code,
+plugin or config it describes — and this repo holds none of it (measured before the
+change: **0 `.go`, 0 `.cue`, no `candy/` directory**) — so it moved, byte-identically,
+to the repo that does:
 
-## What it provides
+| Skill | Now authored in | The entity that owns it |
+|---|---|---|
+| `nvidia-layer` | [`opencharly/layer-nvidia`](https://github.com/opencharly/layer-nvidia) | the `nvidia` candy it documents |
+
+**The addresses did not change.** Every skill keeps its `distros` family at its
+destination node, so `/charly-distros:<skill>` still resolve — they are simply authored
+where the entity is implemented. The move is the rule `AGENTS.md` Part II #5 states, tracked
+in [opencharly/opencharly#600](https://github.com/opencharly/opencharly/issues/600).
+
+## What remains here
 
 | Property | Value |
 |---|---|
-| Layer / candy | `charly-distros` (concept candy) |
+| Layer / candy | `charly-distros` (drained concept candy) |
 | Install content | none — a `true` no-op `plan:` |
-| Owns | 1 `skill:` entity: `nvidia-layer` |
-| Projected to | `marketplace/distros/skills/` |
+| Owns | nothing — 0 `skill:` entities |
 | Service / port | none |
 
-## How to use it
-
-This repo is consumed as a **skill source**, not as an image layer. Edit the
-`skill:` entities in `charly.yml`; the marketplace regeneration projects them
-into `/charly-distros:*` pages. To reference the repo directly, compose it in a
-box. A box is a `candy:` node that carries the box's `base:` image and a nested
-`candy:` list of layer refs (the nested `candy:` is the composition list; the
-outer `candy:` is the box body):
-
-```yaml
-my-box:
-  candy:                  # the box body (an IMAGE is a `candy:` node carrying `base:`)
-    base: fedora          # the box's base image
-    candy:                # the box's composition list
-      - '@github.com/opencharly/layer-charly-distros:v2026.265.2045'
-```
-
-The GPU runtime layer itself is consumed through the `nvidia` candy — compose
-`layer-nvidia` in a GPU box; the `nvidia-layer` skill here documents that candy's
-behaviour.
-
-## Layout
-
-- `charly.yml` — the `charly-distros:` concept candy entity plus the
-  `nvidia-layer-skill:` entity (`name: nvidia-layer`, `family: distros`).
-- `.github/workflows/tag-on-merge.yml` — CalVer tag + `CHANGELOG/` on merge.
-- `README.md` — this user overview.
-
-## Related
-
-- Owning skill: `/charly-distros:nvidia-layer`
-- Authoring reference: `/charly-image:layer`
-- Distro base images: `opencharly/distro-arch`, `opencharly/distro-cachyos`,
-  `opencharly/distro-debian`, `opencharly/distro-fedora`,
-  `opencharly/distro-omarchy`, `opencharly/distro-ubuntu`
-- [`opencharly/marketplace`](https://github.com/opencharly/marketplace) — the projected corpus
-- [`opencharly/charly`](https://github.com/opencharly/charly) — the charly CLI and image builder
-- [`opencharly/opencharly`](https://github.com/opencharly/opencharly) — the umbrella
+Do not compose, reference or edit this repo: the skills, their routing nodes and their
+prose all live at the destinations above, and this repo's retirement is tracked in
+[opencharly/opencharly#600](https://github.com/opencharly/opencharly/issues/600).
